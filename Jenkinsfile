@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('First stage'){
             steps {
-                sh '''
+                bat '''
                     echo "pipeline is successful"
                 '''
             }
