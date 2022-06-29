@@ -11,7 +11,7 @@ pipeline {
         stage('second stage'){
             steps {
                 bat '''
-                    ${WORKSPACE}/sample.bat
+                    %WORKSPACE%/sample.bat
                 '''
             }
         }
