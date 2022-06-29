@@ -11,7 +11,7 @@ pipeline {
         stage('second stage'){
             steps {
                 bat '''
-                    c://some/folder/run_build_windows.bat
+                    ${WORKSPACE}/sample.bat
                 '''
             }
         }
