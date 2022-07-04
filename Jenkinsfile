@@ -14,6 +14,7 @@ pipeline {
                 '''
             }
         }
+        /* We can't have if directly inside steps in declarative pipeline. We need to have script section to have if/When condition */
         stage('If stage'){
             steps {
                 script{
