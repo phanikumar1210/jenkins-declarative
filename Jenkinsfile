@@ -14,9 +14,9 @@ pipeline {
                 '''
             }
         }
-        stage('When stage'){
+        stage('If stage'){
             steps {
-                when ( "${params.Env}"  == "Yes" ){
+                if ( "${params.Env}"  == "Yes" ){
                     bat '''
                     echo "In when condition"
                 '''
