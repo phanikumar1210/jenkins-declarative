@@ -16,7 +16,7 @@ pipeline {
         }
         stage('When stage'){
             when {
-                branch 'master'
+                 expression { "${params.Env}" == 'Yes' }
             }
             steps {
                 
