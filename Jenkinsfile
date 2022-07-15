@@ -21,7 +21,7 @@ pipeline {
             steps {
                 
                 bat '''
-                        echo "In when condition updated"
+                        echo "In when condition"
                 '''
             }
         }
