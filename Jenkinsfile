@@ -26,8 +26,8 @@ pipeline {
                 
                 bat '''
                         echo "In when condition"
-                        echo env.printenv
                 '''
+                getBranch()
             }
         }
         /* We can't have if directly inside steps in declarative pipeline. We need to have script section to have if/When condition */
@@ -50,4 +50,11 @@ pipeline {
             }
         }
     }
+}
+
+def getBranch(){
+    def env = System.getenv()
+    env.each{
+        println it
+    } 
 }
