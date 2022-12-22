@@ -16,6 +16,10 @@ pipeline {
                     echo "pipeline is successful"
                     echo ${env.GIT_BRANCH}
                 '''
+                script{
+                    bat "${env.GIT_BRANCH}"
+                    bat "${env.BRANCH_NAME}"
+                }
             }
         }
         stage('When stage'){
