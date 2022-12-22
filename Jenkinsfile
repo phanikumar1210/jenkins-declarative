@@ -25,7 +25,7 @@ pipeline {
                 
                 bat '''
                         echo "In when condition"
-                        echo "${env.BRANCH_NAME}"
+                        echo env.printenv
                 '''
             }
         }
