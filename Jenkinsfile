@@ -14,7 +14,7 @@ pipeline {
             steps {
                 bat '''
                     echo "pipeline is successful"
-                    echo env.GIT_BRANCH
+                    echo ${env.GIT_BRANCH}
                 '''
             }
         }
