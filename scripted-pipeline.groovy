@@ -1,7 +1,7 @@
 node{
     stage("Hello World"){
         echo "Welcome"
-        echo $GIT_BRANCH
+        echo $BRANCH_NAME
     }
     stage("Stage 2"){
         echo "Stage 2"
