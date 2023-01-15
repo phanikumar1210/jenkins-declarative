@@ -29,5 +29,6 @@ def getChangedFilesList() {
         }
     }
     changed_file_list=changedFiles
+    println changedFiles
     return changedFiles
 }
