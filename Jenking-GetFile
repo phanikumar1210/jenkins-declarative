@@ -6,6 +6,9 @@ pipeline {
         stage('Hello') {
             steps {
                 getChangedFilesList()
+                changed_file_list.each{
+                    println it
+                }
             }
         }
     }
