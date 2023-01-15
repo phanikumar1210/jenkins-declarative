@@ -1,10 +1,11 @@
+def changed_file_list=[]
 pipeline {
     agent any
 
     stages {
         stage('Hello') {
             steps {
-                files=getChangedFilesList()
+                getChangedFilesList()
             }
         }
     }
@@ -21,5 +22,6 @@ def getChangedFilesList() {
             }
         }
     }
+    changed_file_list=changedFiles
     return changedFiles
 }
