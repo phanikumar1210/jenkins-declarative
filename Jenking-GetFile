@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script{
                     files=getChangedFilesList()
-                    files.each{it ->
+                    files.each{
                         println "Testing files"
                         println it
                     }   
