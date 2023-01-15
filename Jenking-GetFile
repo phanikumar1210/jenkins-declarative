@@ -1,0 +1,34 @@
+def changed_file_list=[]
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                script{
+                    files=getChangedFilesList()
+                    files.each{
+                        println "Testing files"
+                        println it
+                    }   
+                }
+            }
+        }
+    }
+}
+
+
+@NonCPS
+def getChangedFilesList() {
+    changedFiles = []
+    for (changeLogSet in currentBuild.changeSets) {
+        for (entry in changeLogSet.getItems()) { // for each commit in the detected changes
+            for (file in entry.getAffectedFiles()) {
+                changedFiles.add(file.getPath()) // add changed file to list
+            }
+        }
+    }
+    changed_file_list=changedFiles
+    println changedFiles
+    return changedFiles
+}
