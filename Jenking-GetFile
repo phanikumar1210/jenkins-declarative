@@ -5,10 +5,12 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                getChangedFilesList()
-                for (i = 0; i < changed_file_list.size(); i++)
-                {
-                    println changed_file_list[i]
+                script{
+                    getChangedFilesList()
+                    for (i = 0; i < changed_file_list.size(); i++)
+                    {
+                        println changed_file_list[i]
+                    }   
                 }
             }
         }
