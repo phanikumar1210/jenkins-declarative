@@ -30,7 +30,7 @@ def getChangedFilesList() {
                 println file.getPath().startsWith("migration-tool")
                 if(file.getPath().startsWith("migration-tool") && file_name_reg.matcher(actual_file_name).matches()){
                     println "Inside if condition"
-                    changedFiles=changedFiles+file.getPath()+"," // add changed file to list
+                    changedFiles+=file.getPath()+"," // add changed file to list
                     println changedFiles
                 }
             }
