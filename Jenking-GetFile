@@ -20,14 +20,23 @@ pipeline {
 
 @NonCPS
 def getChangedFilesList() {
-    changedFiles = []
+    changedFiles = ""
+	def splitted_file=""
+	def file_name_reg= ~/(\d)*([a-z])*\.js/
     for (changeLogSet in currentBuild.changeSets) {
         for (entry in changeLogSet.getItems()) { // for each commit in the detected changes
             for (file in entry.getAffectedFiles()) {
-                changedFiles.add(file.getPath()) // add changed file to list
+				splitted_file=file.getPath().split("/")
+				actual_file_name=splitted_file[splitted_file.size()-1]
+                if(file.getPath().startsWith("migration-tool") && file_name_reg.matcher(actual_file_name).matches()){
+                    changedFiles+file.getPath()+"," // add changed file to list
+                }
             }
         }
     }
+	if (changedFiles.endsWith(",")) {
+	  changedFiles = changedFiles.substring(0, changedFiles.length() - 1);
+	}
     changed_file_list=changedFiles
     println changedFiles
     return changedFiles
