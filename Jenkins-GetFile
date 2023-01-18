@@ -35,6 +35,7 @@ def getChangedFilesList() {
 	  changedFiles = changedFiles.substring(0, changedFiles.length() - 1);
 	}
     changed_file_list=changedFiles
+    println("Changed files list")
     println changedFiles
     return changedFiles
 }
