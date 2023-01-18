@@ -25,6 +25,7 @@ def getChangedFilesList() {
             for (file in entry.getAffectedFiles()) {
 				splitted_file=file.getPath().split("/")
 				actual_file_name=splitted_file[splitted_file.size()-1]
+                println actual_file_name
                 if(file.getPath().startsWith("migration-tool") && file_name_reg.matcher(actual_file_name).matches()){
                     changedFiles+file.getPath()+"," // add changed file to list
                 }
