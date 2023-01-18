@@ -29,11 +29,14 @@ def getChangedFilesList() {
                 println file_name_reg.matcher(actual_file_name).matches()
                 println file.getPath().startsWith("migration-tool")
                 if(file.getPath().startsWith("migration-tool") && file_name_reg.matcher(actual_file_name).matches()){
-                    changedFiles+file.getPath()+"," // add changed file to list
+                    println "Inside if condition"
+                    changedFiles=changedFiles+file.getPath()+"," // add changed file to list
+                    println changedFiles
                 }
             }
         }
     }
+    println changedFiles
 	if (changedFiles.endsWith(",")) {
 	  changedFiles = changedFiles.substring(0, changedFiles.length() - 1);
 	}
