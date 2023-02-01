@@ -1,1 +1,1 @@
-echo "this is bat file"
+echo "this is bat file test"
