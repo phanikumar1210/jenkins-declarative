@@ -3,9 +3,6 @@ pipeline {
     environment {
      BRANCH_NAME =  "${GIT_BRANCH.split('/').size() > 1 ? GIT_BRANCH.split('/')[1..-1].join('/') : GIT_BRANCH}"
   }
-  trigger  {
-    cron('* * * * *')
-  }
     stages {
         stage('First stage'){
             steps {
