@@ -13,11 +13,11 @@ pipeline {
         stage('First stage'){
             steps {
                 bat '''
-                    echo "pipeline is successful"
-                    echo ${env.GIT_BRANCH}
+                    this is git pr testing "pipeline is successful"
+                    this is git pr testing ${env.GIT_BRANCH}
                 '''
                 script{
-                    bat "echo ${env.BRANCH_NAME}"
+                    bat "this is git pr testing ${env.BRANCH_NAME}"
                 }
             }
         }
@@ -28,7 +28,7 @@ pipeline {
             steps {
                 
                 bat '''
-                        echo "In when condition"
+                        this is git pr testing "In when condition"
                 '''
                 getBranch()
             }
@@ -39,7 +39,7 @@ pipeline {
                 script{
                     if ( "${params.Env}"  == "Yes" ){
                             bat '''
-                            echo "In when condition"
+                            this is git pr testing "In when condition"
                         '''
                         }
                 }

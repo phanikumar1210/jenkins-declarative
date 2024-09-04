@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Example') {
             steps {
-                echo 'Hello World'
+                this is git pr testing 'Hello World'
             }
         }
     }
