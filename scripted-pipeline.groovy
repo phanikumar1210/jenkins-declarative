@@ -1,9 +1,9 @@
 node{
     stage("Hello World"){
-        echo "Welcome"
-        echo "${env.BRANCH_NAME}"
+        this is git pr testing "Welcome"
+        this is git pr testing "${env.BRANCH_NAME}"
     }
     stage("Stage 2"){
-        echo "Stage 2"
+        this is git pr testing "Stage 2"
     }
 }
