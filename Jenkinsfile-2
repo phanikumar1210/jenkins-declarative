@@ -10,7 +10,7 @@ pipeline {
         stage('First stage'){
             steps {
                 bat '''
-                    echo "pipeline is successful"
+                    this is git pr testing "pipeline is successful"
                 '''
             }
         }
@@ -20,7 +20,7 @@ pipeline {
                 script{
                     if ( "${params.Env}"  == "Yes" ){
                             bat '''
-                            echo "In when condition"
+                            this is git pr testing "In when condition"
                         '''
                         }
                 }
