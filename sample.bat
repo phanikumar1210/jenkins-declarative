@@ -1,1 +1,1 @@
-echo "this is bat file testing"
+echo "this is git pr testing"
